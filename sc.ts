@@ -1,81 +1,32 @@
-const resultElement = document.getElementById("result") as HTMLDivElement;
-const buttons = document.querySelectorAll(".btn");
-
-let currentInput = ""
-let previousInput = ""
-let operator = ""
-
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const key = button.getAttribute("data-key");
-
-        if (!key) return
-        if (key === "C") {
-            clear();
-        } else if (key === "=") {
-            calculate();
-        } else if (["+", "-", "*", "/"].includes(key)) {
-            setOperator(key);
-        } else {
-            appendNumber(key);
+const display = document.getElementById("display") as HTMLInputElement | null;
+document.getElementById("equals")?.addEventListener("click", calculate);
+document.getElementById("clear")?.addEventListener("click", clearDisplay);
+function appendToDisplay(input: string): void {
+    if (display) {
+        display.value += input;
+    }
+}
+function clearDisplay(): void {
+    if (display) {
+        display.value = "";
+    }
+}
+function calculate(): void {
+    if (display) {
+        try {
+            display.value = eval(display.value).toString();
+        } catch (error) {
+            display.value = "Error";
         }
-    });
+    }
+}
+document.getElementById("keys")?.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+    const input = target.getAttribute("data-input");
+
+    if (input) {
+        appendToDisplay(input);
+    }
 });
 
-function clear() {
-    currentInput = "";
-    previousInput = "";
-    operator = "";
-    updateDisplay("0");
-}
 
-function appendNumber(num: string) {
-    if (num === "." && currentInput.includes(".")) return;
-    currentInput += num;
-    updateDisplay(currentInput);
-}
-
-function setOperator(op: string) {
-    if (currentInput === "") return;
-    if (previousInput !== "") {
-        calculate();
-    }
-    operator = op;
-    previousInput = currentInput;
-    currentInput = "";
-}
-
-function calculate() {
-    if (currentInput === "" || previousInput === "" || operator === "") return;
-
-    const num1 = parseFloat(previousInput);
-    const num2 = parseFloat(currentInput);
-
-    let result: number;
-
-    switch (operator) {
-        case "+":
-            result = num1 + num2;
-            break;
-        case "-":
-            result = num1 - num2;
-            break;
-        case "*":
-            result = num1 * num2;
-            break;
-        case "/":
-            result = num1 / num2;
-            break;
-        default:
-            return;
-    }
-
-    updateDisplay(result.toString());
-    previousInput = result.toString();
-    currentInput = "";
-    operator = "";
-}
-
-function updateDisplay(value: string) {
-    resultElement.innerText = value;
-}

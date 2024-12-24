@@ -38,33 +38,33 @@
 
     <body class="min-h-screen flex items-center justify-center  text-green-300 font-mono">
         <section class="w-[400px] bg-gray-900 p-8 rounded-2xl shadow-2xl border-4 border-gray-700">
-            <article id="result" class="h-20 bg-gray-800 rounded-lg text-right text-4xl p-4 mb-8 shadow-inner tracking-wide">
-                0
-            </article>
-            <article class="grid grid-cols-4 gap-3">
-                <button class="btn bg-red-700" data-key="C">C</button>
-                <button class="btn bg-gray-700" data-key="/">/</button>
-                <button class="btn bg-gray-700" data-key="*">*</button>
-                <button class="btn bg-gray-700" data-key="-">-</button>
+            
+            <input readonly id="display" placeholder="0" class="w-[100%] h-20 bg-gray-800 rounded-lg text-right text-4xl p-4 mb-8 shadow-inner tracking-wide">
+            
+            <div id="keys" class="grid grid-cols-4 gap-3">
+                <button class="btn bg-red-700" id="clear">C</button>
+                <button class="btn bg-gray-700" data-input="/">/</button>
+                <button class="btn bg-gray-700" data-input="*">*</button>
+                <button class="btn bg-gray-700" data-input="-">-</button>
     
-                <button class="btn bg-gray-600" data-key="7">7</button>
-                <button class="btn bg-gray-600" data-key="8">8</button>
-                <button class="btn bg-gray-600" data-key="9">9</button>
-                <button class="btn bg-gray-700" data-key="+">+</button>
+                <button class="btn bg-gray-600" data-input="7">7</button>
+                <button class="btn bg-gray-600" data-input="8">8</button>
+                <button class="btn bg-gray-600" data-input="9">9</button>
+                <button class="btn bg-gray-700" data-input="+">+</button>
     
-                <button class="btn bg-gray-600" data-key="4">4</button>
-                <button class="btn bg-gray-600" data-key="5">5</button>
-                <button class="btn bg-gray-600" data-key="6">6</button>
-                <button class="btn bg-gray-700" data-key=".">.</button>
+                <button class="btn bg-gray-600" data-input="4">4</button>
+                <button class="btn bg-gray-600" data-input="5">5</button>
+                <button class="btn bg-gray-600" data-input="6">6</button>
+                <button class="btn bg-gray-700" data-input=".">.</button>
                 
-                <button class="btn bg-gray-600" data-key="2">2</button>
-                <button class="btn bg-gray-600" data-key="3">3</button>
-                <button class="btn bg-gray-600" data-key="1">1</button>
-                <button class="btn bg-green-700" data-key="=">=</button>
+                <button class="btn bg-gray-600" data-input="2">2</button>
+                <button class="btn bg-gray-600" data-input="3">3</button>
+                <button class="btn bg-gray-600" data-input="1">1</button>
+                <button class="btn bg-green-700" id="equals">=</button>
     
-                <button class="btn bg-gray-600 col-span-4" data-key="0">0</button>
+                <button class="btn bg-gray-600 col-span-4" data-input="0">0</button>
     
-            </article>
+            </div>
             <div class="mt-12">
     
                 <p>by David Schwarz</p>
