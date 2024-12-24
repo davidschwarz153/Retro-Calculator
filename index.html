@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./sc.ts"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Retro Calculator</title>
+    <style>
+        section{
+            opacity: 0.75;
+            
+        }
+        .btn {
+            color: whitesmoke;
+            font-size: bold;
+            font-size: large;
+            padding: 4px;
+            border-radius: 20px;
+            opacity: 0.8;
+            &:hover{box-shadow: 0px 0px 0px 2px gray;
+            }
+            /* bg-gradient-to-br from-gray-900 via-gray-800 to-black */
+        }
+
+        body{
+            background-image: url(./youtube-video-gif.gif);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #result {
+            text-shadow: 0 0 10px #76ff03, 0 0 20px #76ff03, 0 0 30px #76ff03;
+        }
+    </style>
+</head>
+<div class="leckmich">
+
+    <body class="min-h-screen flex items-center justify-center  text-green-300 font-mono">
+        <section class="w-[400px] bg-gray-900 p-8 rounded-2xl shadow-2xl border-4 border-gray-700">
+            <article id="result" class="h-20 bg-gray-800 rounded-lg text-right text-4xl p-4 mb-8 shadow-inner tracking-wide">
+                0
+            </article>
+            <article class="grid grid-cols-4 gap-3">
+                <button class="btn bg-red-700" data-key="C">C</button>
+                <button class="btn bg-gray-700" data-key="/">/</button>
+                <button class="btn bg-gray-700" data-key="*">*</button>
+                <button class="btn bg-gray-700" data-key="-">-</button>
+    
+                <button class="btn bg-gray-600" data-key="7">7</button>
+                <button class="btn bg-gray-600" data-key="8">8</button>
+                <button class="btn bg-gray-600" data-key="9">9</button>
+                <button class="btn bg-gray-700" data-key="+">+</button>
+    
+                <button class="btn bg-gray-600" data-key="4">4</button>
+                <button class="btn bg-gray-600" data-key="5">5</button>
+                <button class="btn bg-gray-600" data-key="6">6</button>
+                <button class="btn bg-gray-700" data-key=".">.</button>
+                
+                <button class="btn bg-gray-600" data-key="2">2</button>
+                <button class="btn bg-gray-600" data-key="3">3</button>
+                <button class="btn bg-gray-600" data-key="1">1</button>
+                <button class="btn bg-green-700" data-key="=">=</button>
+    
+                <button class="btn bg-gray-600 col-span-4" data-key="0">0</button>
+    
+            </article>
+            <div class="mt-12">
+    
+                <p>by David Schwarz</p>
+            </div>
+        </section>
+    </body>
+</div>
+</html>
